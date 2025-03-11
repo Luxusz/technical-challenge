@@ -13,18 +13,22 @@ import java.util.List;
 @RequestMapping("/api/students")
 public class StudentsController {
 
-    @Autowired
-    private StudentsService studentsService;
+    private final StudentsService studentsService;
+
+    public StudentsController(StudentsService studentsService) {
+        this.studentsService = studentsService;
+    }
 
     @GetMapping("/course/{courseId}")
-    public ResponseEntity<List<StudentDTO>> getStudentByCourse(@PathVariable("courseId") Long courseId){
+    public ResponseEntity<List<StudentDTO>> getStudentByCourse(@PathVariable("courseId") int courseId){
         List<StudentDTO> studentDTOList = studentsService.getStudentsByCourse(courseId);
         return new ResponseEntity<>(studentDTOList, HttpStatus.OK);
     }
 
     @PostMapping("/")
-    public StudentDTO createStudent(@RequestBody StudentDTO student){
-        return studentsService.createStudent(student);
+    public ResponseEntity<StudentDTO> createStudent(@RequestBody StudentDTO student){
+        StudentDTO studentDTO = studentsService.createStudent(student);
+        return new ResponseEntity<>(studentDTO, HttpStatus.CREATED);
     }
 
     @GetMapping("/")
@@ -34,7 +38,7 @@ public class StudentsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StudentDTO> getStudentById(@PathVariable("id") Long id){
+    public ResponseEntity<StudentDTO> getStudentById(@PathVariable("id") int id){
         StudentDTO studentDTO = studentsService.getStudentById(id);
         return new ResponseEntity<>(studentDTO, HttpStatus.OK);
     }

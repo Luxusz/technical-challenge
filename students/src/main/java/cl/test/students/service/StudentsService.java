@@ -17,17 +17,19 @@ import java.util.List;
 
 @Service
 public class StudentsService {
-    @Autowired
-    private StudentsRepository studentsRepository;
 
-    @Autowired
-    private StudentMapper studentMapper;
+    private final StudentsRepository studentsRepository;
+    private final StudentMapper studentMapper;
+    private final CoursesClient coursesClient;
 
-    @Autowired
-    private CoursesClient coursesClient;
+    public StudentsService(StudentsRepository studentsRepository, StudentMapper studentMapper, CoursesClient coursesClient) {
+        this.studentsRepository = studentsRepository;
+        this.studentMapper = studentMapper;
+        this.coursesClient = coursesClient;
+    }
 
-    public List<StudentDTO> getStudentsByCourse(Long courseId) {
-        List<Student> studentList = new ArrayList<>();
+    public List<StudentDTO> getStudentsByCourse(int courseId) {
+        List<Student> studentList;
         Mono<CourseDTO> courseDTO = coursesClient.getCourseById(courseId)
                 .map(course -> course);
         studentList = studentsRepository.findByCourseId(courseId);
@@ -44,7 +46,7 @@ public class StudentsService {
         return studentMapper.toStudentListDTO(studentsRepository.findAll());
     }
 
-    public StudentDTO getStudentById(Long id) {
+    public StudentDTO getStudentById(int id) {
         return studentMapper.toStudentDTO(studentsRepository.findById(id).get());
     }
 }

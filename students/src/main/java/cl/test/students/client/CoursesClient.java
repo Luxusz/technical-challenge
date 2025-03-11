@@ -17,7 +17,7 @@ public class CoursesClient {
         this.webClient = webClientBuilder.build();
     }
 
-    public Mono<CourseDTO> getCourseById(@PathVariable("id") Long id){
+    public Mono<CourseDTO> getCourseById(@PathVariable("id") int id){
         return webClient.get()
                 .uri("courses/{id}", id)
                 .retrieve()

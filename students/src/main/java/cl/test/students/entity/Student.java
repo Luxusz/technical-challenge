@@ -9,16 +9,16 @@ import jakarta.persistence.Id;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String name;
     private String lastName;
     private String mail;
-    private Long courseId;
+    private int courseId;
 
     public Student() {
     }
 
-    public Student(Long id, String name, String lastName, String mail, Long courseId) {
+    public Student(int id, String name, String lastName, String mail, int courseId) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -26,11 +26,11 @@ public class Student {
         this.courseId = courseId;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -58,11 +58,11 @@ public class Student {
         this.mail = mail;
     }
 
-    public Long getCourseId() {
+    public int getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(Long courseId) {
+    public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
 

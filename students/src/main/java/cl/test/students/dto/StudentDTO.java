@@ -2,16 +2,16 @@ package cl.test.students.dto;
 
 public class StudentDTO {
 
-    private Long id;
+    private int id;
     private String name;
     private String lastName;
     private String mail;
-    private Long courseId;
+    private int courseId;
 
     public StudentDTO() {
     }
 
-    public StudentDTO(Long id, String name, String lastName, String mail, Long courseId) {
+    public StudentDTO(int id, String name, String lastName, String mail, int courseId) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -19,11 +19,11 @@ public class StudentDTO {
         this.courseId = courseId;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -51,11 +51,11 @@ public class StudentDTO {
         this.mail = mail;
     }
 
-    public Long getCourseId() {
+    public int getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(Long courseId) {
+    public void setCourseId(int courseId) {
         this.courseId = courseId;
     }
 }

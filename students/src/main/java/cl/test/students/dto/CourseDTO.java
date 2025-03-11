@@ -1,24 +1,24 @@
 package cl.test.students.dto;
 
 public class CourseDTO {
-    private Long id;
+    private int id;
     private String nameCourse;
     private String teacherCourse;
 
     public CourseDTO() {
     }
 
-    public CourseDTO(Long id, String nameCourse, String teacherCourse) {
+    public CourseDTO(int id, String nameCourse, String teacherCourse) {
         this.id = id;
         this.nameCourse = nameCourse;
         this.teacherCourse = teacherCourse;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
