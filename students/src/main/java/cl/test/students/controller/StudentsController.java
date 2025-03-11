@@ -17,7 +17,7 @@ public class StudentsController {
     private StudentsService studentsService;
 
     @GetMapping("/course/{courseId}")
-    public ResponseEntity<List<StudentDTO>> getStudentByCourse(@PathVariable Long courseId){
+    public ResponseEntity<List<StudentDTO>> getStudentByCourse(@PathVariable(("courseId")) Long courseId){
         List<StudentDTO> studentDTOList = studentsService.getStudentsByCourse(courseId);
         return new ResponseEntity<>(studentDTOList, HttpStatus.OK);
     }
