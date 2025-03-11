@@ -8,6 +8,10 @@
 	<name>technical-challenge</name>
 	<description>Technical Challenge</description>
 	<packaging>pom</packaging>
+	<modules>
+		<module>courses</module>
+		<module>students</module>
+	</modules>
 	<properties>
 		<spring.version>3.4.3</spring.version>
 		<java.version>17</java.version>

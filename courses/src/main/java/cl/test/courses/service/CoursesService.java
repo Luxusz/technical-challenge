@@ -29,4 +29,11 @@ public class CoursesService {
                         coursesRepository
                                 .findAll());
     }
+
+    public CourseDTO getCourseById(Long id){
+        return coursesMapper
+                .toCourseDTO(
+                        coursesRepository
+                                .findById(id).get());
+    }
 }

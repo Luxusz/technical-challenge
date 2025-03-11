@@ -15,6 +15,17 @@ public class Student {
     private String mail;
     private Long courseId;
 
+    public Student() {
+    }
+
+    public Student(Long id, String name, String lastName, String mail, Long courseId) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.mail = mail;
+        this.courseId = courseId;
+    }
+
     public Long getId() {
         return id;
     }

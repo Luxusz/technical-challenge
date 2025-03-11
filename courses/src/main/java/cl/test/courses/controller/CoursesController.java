@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/courses")
+@RequestMapping("/api/courses")
 public class CoursesController {
 
     @Autowired
@@ -26,5 +26,11 @@ public class CoursesController {
     public ResponseEntity<List<CourseDTO>> getCourses(){
         List<CourseDTO> courses = coursesService.getCourses();
         return new ResponseEntity<>(courses, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") Long id){
+        CourseDTO course = coursesService.getCourseById(id);
+        return new ResponseEntity<>(course, HttpStatus.OK);
     }
 }

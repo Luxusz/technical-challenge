@@ -5,6 +5,7 @@ import cl.test.students.entity.Student;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import java.util.List;
+import java.util.Optional;
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface StudentMapper {
