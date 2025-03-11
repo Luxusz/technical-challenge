@@ -1,4 +1,4 @@
-package eurekaserver.src.main.java.cl.test.eurekaserver;
+package cl.test.eurekaserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
