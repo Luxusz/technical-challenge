@@ -7,9 +7,11 @@
 		<artifactId>technical-challenge</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<artifactId>courses</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>courses</name>
 	<description>Technical Challenge Courses</description>
+
 	<properties>
 		<java.version>17</java.version>
 		<org.mapstruct.version>1.6.3</org.mapstruct.version>
